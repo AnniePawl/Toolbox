@@ -6,6 +6,8 @@ const index = express();
 // process.env.PORT || 3000
 
 // DATABASE
+// const mongoose = require('mongoose');
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/toolbox', { useNewUrlParser: true });
 
 // ROUTES
 // Import Toolbox Model
@@ -15,17 +17,26 @@ const index = express();
 
 // HANDLEBARS MATERIAL
 var exphbs = require('express-handlebars');
+
 index.engine('handlebars', exphbs({defaultLayout: 'main' }));
 index.set('view engine', 'handlebars');
+
+// INDEX
+index.get('/', (req, res) => {
+  res.render('home', { msg: 'It Works!' });
+})
+
 
 // MIDDLEWARE, ROUTE CONFIGURATION
 // index.use(bodyParser.urlencoded({ extended: true }));
 // index.use(methodOverride('_method'))
 
-index.get('/', (req, res) => {
-  res.render('home', { msg: 'Handlebars are Cool!' });
-})
+// IMPORT ROUTES
+// const toolbox = require('./controllers/toolboxes')(app);
+// const category = require('./controllers/categories')(app);
 
+
+// SERVER START
 index.listen(3000, () => {
   console.log('App listening on port 3000!')
 })
