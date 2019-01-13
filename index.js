@@ -26,6 +26,17 @@ index.get('/', (req, res) => {
   res.render('home', { msg: 'It Works!' });
 })
 
+// MOCK BOXES (for testing)
+let toolboxes = [
+  { title: "Make School", boxLabel: "Make School!" },
+  { title: "Personal", boxLabel: "Personal Box" }
+]
+
+// INDEX
+index.get('/toolboxes', (req, res) => {
+  res.render('toolboxes-index', { toolboxes: toolboxes  });
+})
+
 
 // MIDDLEWARE, ROUTE CONFIGURATION
 // index.use(bodyParser.urlencoded({ extended: true }));
