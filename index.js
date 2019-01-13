@@ -1,10 +1,16 @@
 const express = require('express')
-const app = express()
+const index = express()
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+index.get('/', (req, res) => {
+  res.render('home', { msg: 'Handlebars are Cool!' });
 })
 
-app.listen(3000, () => {
+index.listen(3000, () => {
   console.log('App listening on port 3000!')
 })
+
+// Handlebars Material
+var exphbs = require('express-handlebars');
+
+index.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+index.set('view engine', 'handlebars');
