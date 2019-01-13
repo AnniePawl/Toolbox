@@ -1,0 +1,22 @@
+{
+  "name": "toolbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnniePawl/Toolbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnniePawl/Toolbox/issues"
+  },
+  "homepage": "https://github.com/AnniePawl/Toolbox#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
