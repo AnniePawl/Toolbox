@@ -6,7 +6,8 @@ const index = express();
 // process.env.PORT || 3000
 
 // DATABASE
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/toolbox');
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/toolbox', { useNewUrlParser: true });
 
 // ROUTES
