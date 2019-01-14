@@ -17,21 +17,15 @@ const Toolbox = mongoose.model('Toolbox', {
 });
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/toolbox', { useNewUrlParser: true });
 
+// HANDLEBARS MATERIAL
+var exphbs = require('express-handlebars');
+index.engine('handlebars', exphbs({defaultLayout: 'main' }));
+index.set('view engine', 'handlebars');
+index.use(express.static('public'))
+
 // MIDDLEWARE, ROUTE CONFIGURATION
 index.use(bodyParser.urlencoded({ extended: true }));
 index.use(methodOverride('_method'))
-
-// ROUTES
-// Import Toolbox Model
-// const Toolbox = require('./models/toolbox');
-// Import Category Model
-// const Category = require('./models/category');
-
-// HANDLEBARS MATERIAL
-var exphbs = require('express-handlebars');
-
-index.engine('handlebars', exphbs({defaultLayout: 'main' }));
-index.set('view engine', 'handlebars');
 
 // INDEX
 index.get('/', (req, res) => {
