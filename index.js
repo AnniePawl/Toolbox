@@ -8,6 +8,11 @@ const index = express();
 // DATABASE
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/toolbox');
+
+const Toolbox = mongoose.model('Toolbox', {
+  title: String,
+  boxLabel: String
+});
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/toolbox', { useNewUrlParser: true });
 
 // ROUTES
@@ -27,16 +32,17 @@ index.get('/', (req, res) => {
   res.render('home', { msg: 'It Works!' });
 })
 
-// MOCK BOXES (for testing)
-let toolboxes = [
-  { title: "Make School", boxLabel: "Make School!" },
-  { title: "Personal", boxLabel: "Personal Box" }
-]
-
 // INDEX
 index.get('/toolboxes', (req, res) => {
-  res.render('toolboxes-index', { toolboxes: toolboxes  });
-})
+    Toolbox.find()
+      .then(toolboxes => {
+        // Executed when promise resolves
+        res.render('toolboxes-index', { toolboxes: toolboxes });
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  })
 
 
 // MIDDLEWARE, ROUTE CONFIGURATION
