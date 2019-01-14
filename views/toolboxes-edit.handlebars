@@ -1,11 +1,16 @@
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
+
       <form method="POST" action="/toolboxes/{{toolbox._id}}?_method=PUT">
-    {{> toolboxes-form}}
-    <!-- BUTTON -->
-    <p>
-      <button type="submit">Save Changes</button>
-    </p>
-  </form>
+
+        <!--Reference to form Partial -->
+        {{> toolboxes-form}}
+
+        <!-- SAVE CHANGES BUTTON -->
+        <p>
+          <button type="submit">Save Changes</button>
+        </p>
+
+    </form>
   </div>
 </div>

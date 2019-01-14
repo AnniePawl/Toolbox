@@ -4,8 +4,8 @@
     <h1>{{toolbox.boxLabel}}</h1>
     <p>{{toolbox.description}}</p>
 
-    <!--EDIT Toolbox-->
-    <p><a href="/toolboxes/{{toolbox.toolboxId}}/toolboxes/{{toolbox._id}}/edit">Edit Your Toolbox</a></p>
+    <!--EDIT Toolbox Link-->
+    <p><a href="/toolboxes/{{toolbox._id}}/edit">Edit Toolbox</a></p>
 
     <!--DELETE BUTTON  -->
     <p><form method="POST" action="/toolboxes/{{toolbox.toolboxId}}/toolboxes/{{toolbox._id}}?_method=DELETE">

@@ -1,8 +1,10 @@
 // EXPRESS MODULES & OBJECTS
 const express = require('express');
+const methodOverride = require('method-override');
+
 const index = express();
-const bodyParser = require('body-parser')
-// methodOverride
+const bodyParser = require('body-parser');
+
 // process.env.PORT || 3000
 
 // DATABASE
@@ -17,8 +19,7 @@ const Toolbox = mongoose.model('Toolbox', {
 
 // MIDDLEWARE, ROUTE CONFIGURATION
 index.use(bodyParser.urlencoded({ extended: true }));
-// index.use(methodOverride('_method'))
-
+index.use(methodOverride('_method'))
 
 // ROUTES
 // Import Toolbox Model
@@ -72,8 +73,22 @@ index.get('/toolboxes/:id', (req, res) => {
 
 
 // EDIT
+index.get('/toolboxes/:id/edit', (req, res) => {
+  Toolbox.findById(req.params.id, function(err, toolbox) {
+    res.render('toolboxes-edit', {toolbox: toolbox});
+  })
+})
 
 // UPDATE
+index.put('/toolboxes/:id', (req, res) => {
+  Toolbox.findByIdAndUpdate(req.params.id, req.body)
+    .then(toolbox => {
+      res.redirect(`/toolboxes/${toolbox._id}`)
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+})
 
 // DELETE
 index.delete('/toolboxes/:id', function (req, res) {
