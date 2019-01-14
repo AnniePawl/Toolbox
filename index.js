@@ -1,7 +1,7 @@
 // EXPRESS MODULES & OBJECTS
 const express = require('express');
 const index = express();
-// bodyParser
+const bodyParser = require('body-parser')
 // methodOverride
 // process.env.PORT || 3000
 
@@ -14,6 +14,11 @@ const Toolbox = mongoose.model('Toolbox', {
   description: String
 });
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/toolbox', { useNewUrlParser: true });
+
+// MIDDLEWARE, ROUTE CONFIGURATION
+index.use(bodyParser.urlencoded({ extended: true }));
+// index.use(methodOverride('_method'))
+
 
 // ROUTES
 // Import Toolbox Model
@@ -44,15 +49,17 @@ index.get('/toolboxes', (req, res) => {
       })
   })
 
- // useNewUrlParser
 // NEW
 index.get('/toolboxes/new', (req, res) => {
     res.render('toolboxes-new', {});
 })
 
-// MIDDLEWARE, ROUTE CONFIGURATION
-// index.use(bodyParser.urlencoded({ extended: true }));
-// index.use(methodOverride('_method'))
+// Create
+index.post('/toolboxes', (req, res) => {
+    console.log(req.body);
+    // res.render(toolboxes-new, {});
+})
+
 
 // IMPORT ROUTES
 // const toolbox = require('./controllers/toolboxes')(app);
