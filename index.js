@@ -10,8 +10,8 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/toolbox');
 
 const Toolbox = mongoose.model('Toolbox', {
-  title: String,
-  boxLabel: String
+  boxLabel: String,
+  description: String
 });
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/toolbox', { useNewUrlParser: true });
 
@@ -44,6 +44,11 @@ index.get('/toolboxes', (req, res) => {
       })
   })
 
+ // useNewUrlParser
+// NEW
+index.get('/toolboxes/new', (req, res) => {
+    res.render('toolboxes-new', {});
+})
 
 // MIDDLEWARE, ROUTE CONFIGURATION
 // index.use(bodyParser.urlencoded({ extended: true }));
