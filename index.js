@@ -76,7 +76,14 @@ index.get('/toolboxes/:id', (req, res) => {
 // UPDATE
 
 // DELETE
-
+index.delete('/toolboxes/:id', function (req, res) {
+  console.log("DELETE toolbox")
+  Toolbox.findByIdAndRemove(req.params.id).then((toolbox) => {
+    res.redirect('/toolboxes');
+  }).catch((err) => {
+    console.log(err.message);
+  })
+})
 
 // SERVER START
 index.listen(3000, () => {
