@@ -1,20 +1,25 @@
-<form method="POST" action="/toolboxes">
-  <fieldset>
-    <legend>Create a New Toolbox</legend>
-    <!-- TITLE -->
-    <p>
-      <label for="boxLabel">Toolbox Label</label><br>
-      <input type="text" name="boxLabel" />
-    </p>
-    <p>
-      <label for="description">Toolbox Description</label><br>
-      <input type="text" name="description" />
-    </p>
-  </fieldset>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
 
-  <!-- BUTTON -->
-  <p>
-    <button type="submit">Create Toolbox</button>
-  </p>
+        <form method="POST" action="/toolboxes">
+          <fieldset>
+            <legend>Create a New Toolbox</legend>
+            <!-- TITLE -->
+            <p>
+              <label for="boxLabel">Toolbox Label</label><br>
+              <input type="text" name="boxLabel" />
+            </p>
+            <p>
+              <label for="description">Toolbox Description</label><br>
+              <input type="text" name="description" />
+            </p>
+          </fieldset>
 
-</form>
+          <!-- BUTTON -->
+          <p>
+            <button type="submit">Create Toolbox</button>
+          </p>
+
+        </form>
+    </div>
+</div>

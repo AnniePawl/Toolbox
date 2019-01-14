@@ -1,0 +1,11 @@
+<a href="/">Back to Toolboxes</a>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1>{{toolbox.boxLabel}}</h1>
+    <p>{{toolbox.description}}</p>
+    <p><a href="/toolboxes/{{toolbox.toolboxId}}/toolboxes/{{toolbox._id}}/edit">Edit</a></p>
+    <p><form method="POST" action="/toolboxes/{{toolbox.toolboxId}}/toolboxes/{{toolbox._id}}?_method=DELETE">
+        <button class="btn btn-primary" type="submit">Delete</button>
+    </form></p>
+
+  </div>

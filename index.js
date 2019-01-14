@@ -54,16 +54,28 @@ index.get('/toolboxes/new', (req, res) => {
     res.render('toolboxes-new', {});
 })
 
-// Create
+// CREATE
 index.post('/toolboxes', (req, res) => {
-    console.log(req.body);
-    // res.render(toolboxes-new, {});
+    Toolbox.create(req.body).then((toolbox) => {
+      console.log(toolbox);
+      res.redirect(`/toolboxes/${toolbox._id}`);
+    }).catch((err) => {
+      console.log(err.message);
+    })
 })
 
+// SHOW
+index.get('/toolboxes/:id', (req, res) => {
+    Toolbox.findById(req.params.id).then( toolbox => {
+        res.render('toolboxes-show', { toolbox: toolbox});
+  }).catch(console.error)})
 
-// IMPORT ROUTES
-// const toolbox = require('./controllers/toolboxes')(app);
-// const category = require('./controllers/categories')(app);
+
+// EDIT
+
+// UPDATE
+
+// DELETE
 
 
 // SERVER START

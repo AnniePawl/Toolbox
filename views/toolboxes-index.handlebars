@@ -3,7 +3,11 @@
 <!--Link to Create New Toolbox  -->
 <a href="/toolboxes/new">Create a New Toolbox</a>
 
-{{#each toolboxes}}
-  <h2>{{this.boxLabel}}</h2>
-  <small>{{this.description}}</small>
+<div class="row">
+    {{#each toolboxes}}
+  <div class="col-sm-3">
+    <h2><a href="/toolboxes/{{this._id}}">{{this.boxLabel}}</a></h2>
+    <small>{{this.description}}</small>
+  </div>
 {{/each}}
+</div>
