@@ -17,21 +17,26 @@ body {
      font-size: 1.5em;
 
  }
+
+ .welcome {
+   display: block;
+   margin-top: 2%;
+   margin-left: auto;
+   margin-right: auto;
+   width: 23%;
+   height: 2.7em;
+ }
+
 .homeToolbox {
   display: block;
   margin-top: 10%;
+  margin-bottom: 10%;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  height: 1.3em;
+  width: 38%;
 }
 
-/* .welcome {
- display: flex;
- flex-direction: column;
- justify-content: center;
- text-align: center;
- font-size: 1.5em;
-} */
 
 /*NAVIGATION BAR STYLES  */
 nav {
