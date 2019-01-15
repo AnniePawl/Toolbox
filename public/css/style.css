@@ -36,16 +36,12 @@ body {
   height: 1.3em;
   width: 38%;
 }
-/*
+
 .about-gradient {
-    display: block;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 1.3em;
-    width: 38%;
-} */
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
 
 .about-heading {
     /* display: block; */
@@ -58,6 +54,15 @@ body {
     height: 2.5em;
 }
 
+.user-narratives {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 2.5em;
+}
 
 /*NAVIGATION BAR STYLES  */
 nav {
