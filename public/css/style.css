@@ -36,6 +36,27 @@ body {
   height: 1.3em;
   width: 38%;
 }
+/*
+.about-gradient {
+    display: block;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1.3em;
+    width: 38%;
+} */
+
+.about-heading {
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 18%;
+    height: 2.5em;
+}
 
 
 /*NAVIGATION BAR STYLES  */
