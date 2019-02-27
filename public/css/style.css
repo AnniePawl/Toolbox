@@ -355,10 +355,8 @@ li:hover > ul.drop-menu {
   margin-top: 1px;
   margin-bottom: 5px;
   position: relative;
-
   background: #4f5659;
   border-radius: 5px;
-
   z-index: 1;
 }
 
